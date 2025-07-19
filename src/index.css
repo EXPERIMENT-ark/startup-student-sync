@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* TalentBridge Design System - Modern platform for student-startup connections */
 
 @layer base {
   :root {
@@ -17,24 +15,40 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Modern tech purple-blue gradient theme */
+    --primary: 258 89% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 270 100% 80%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 249 100% 97%;
+    --secondary-foreground: 258 89% 66%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 249 100% 97%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 258 89% 66%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 258 89% 66%;
+
+    /* Platform-specific design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(258 89% 66%), hsl(224 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(224 100% 70%), hsl(185 100% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(258 89% 66%) 0%, hsl(224 100% 70%) 50%, hsl(185 100% 75%) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(258 89% 66% / 0.3);
+    --shadow-card: 0 4px 20px hsl(258 89% 66% / 0.1);
+    --shadow-elevated: 0 8px 30px hsl(258 89% 66% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -101,5 +115,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Custom component variants */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground;
+    @apply hover:shadow-glow transition-all duration-300;
+  }
+  
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary via-blue-500 to-cyan-400 text-white;
+    @apply hover:scale-105 hover:shadow-elevated transition-all duration-300;
+    @apply border-0 shadow-card;
+  }
+  
+  .card-elevated {
+    @apply bg-card border border-border rounded-lg shadow-card;
+    @apply hover:shadow-elevated transition-all duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-blue-500 to-cyan-400 bg-clip-text text-transparent;
+  }
+  
+  .bg-hero {
+    background: var(--gradient-hero);
   }
 }
