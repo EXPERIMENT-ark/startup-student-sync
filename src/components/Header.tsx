@@ -37,10 +37,12 @@ export const Header = () => {
                 <span>Student Login</span>
               </Button>
             </Link>
-            <Button className="btn-hero flex items-center space-x-2">
-              <Briefcase className="w-4 h-4" />
-              <span>Organizer Login</span>
-            </Button>
+            <Link to="/organizer-portal">
+              <Button className="btn-hero flex items-center space-x-2">
+                <Briefcase className="w-4 h-4" />
+                <span>Organizer Login</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -72,10 +74,12 @@ export const Header = () => {
                     <span>Student Login</span>
                   </Button>
                 </Link>
-                <Button className="btn-hero flex items-center justify-center space-x-2">
-                  <Briefcase className="w-4 h-4" />
-                  <span>Organizer Login</span>
-                </Button>
+                <Link to="/organizer-portal">
+                  <Button className="btn-hero flex items-center justify-center space-x-2">
+                    <Briefcase className="w-4 h-4" />
+                    <span>Organizer Login</span>
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>
