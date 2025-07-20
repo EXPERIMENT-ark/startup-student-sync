@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Menu, X } from "lucide-react";
 
@@ -30,10 +31,12 @@ export const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="flex items-center space-x-2">
-              <Users className="w-4 h-4" />
-              <span>Student Login</span>
-            </Button>
+            <Link to="/student-portal">
+              <Button variant="outline" className="flex items-center space-x-2">
+                <Users className="w-4 h-4" />
+                <span>Student Login</span>
+              </Button>
+            </Link>
             <Button className="btn-hero flex items-center space-x-2">
               <Briefcase className="w-4 h-4" />
               <span>Organizer Login</span>
@@ -63,10 +66,12 @@ export const Header = () => {
                 About
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="flex items-center justify-center space-x-2">
-                  <Users className="w-4 h-4" />
-                  <span>Student Login</span>
-                </Button>
+                <Link to="/student-portal">
+                  <Button variant="outline" className="flex items-center justify-center space-x-2 w-full">
+                    <Users className="w-4 h-4" />
+                    <span>Student Login</span>
+                  </Button>
+                </Link>
                 <Button className="btn-hero flex items-center justify-center space-x-2">
                   <Briefcase className="w-4 h-4" />
                   <span>Organizer Login</span>
