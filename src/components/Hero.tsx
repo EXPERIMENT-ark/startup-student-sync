@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 export const Hero = () => {
@@ -18,15 +19,19 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button size="lg" className="btn-hero text-lg px-8 py-4">
-                <Users className="w-5 h-5 mr-2" />
-                Join as Student
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 hover:shadow-card transition-all">
-                <Briefcase className="w-5 h-5 mr-2" />
-                Post Opportunities
-              </Button>
+              <Link to="/student-portal">
+                <Button size="lg" className="btn-hero text-lg px-8 py-4">
+                  <Users className="w-5 h-5 mr-2" />
+                  Join as Student
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <Link to="/organizer-portal">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 hover:shadow-card transition-all">
+                  <Briefcase className="w-5 h-5 mr-2" />
+                  Post Opportunities
+                </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">
