@@ -11,7 +11,7 @@ export const Hero = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Bridge the Gap Between{" "}
-              <span className="text-gradient">Talent & Opportunity</span>
+              <span className="text-neon animate-neon-flicker">Talent & Opportunity</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
               Connect skilled students with startups, hackathons, and internships. 
@@ -20,14 +20,14 @@ export const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <Link to="/student-portal">
-                <Button size="lg" className="btn-hero text-lg px-8 py-4">
+                <Button size="lg" className="btn-hero text-lg px-8 py-4 glow-effect">
                   <Users className="w-5 h-5 mr-2" />
                   Join as Student
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link to="/organizer-portal">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 hover:shadow-card transition-all">
+                <Button size="lg" className="btn-neon text-lg px-8 py-4">
                   <Briefcase className="w-5 h-5 mr-2" />
                   Post Opportunities
                 </Button>
@@ -50,13 +50,14 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-3xl"></div>
+          <div className="relative floating">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-3xl glow-effect"></div>
             <img
               src={heroImage}
               alt="Students and startups connecting"
               className="relative rounded-2xl shadow-elevated w-full"
             />
+            <div className="absolute inset-0 bg-gradient-cyber rounded-2xl opacity-20"></div>
           </div>
         </div>
       </div>

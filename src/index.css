@@ -2,53 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TalentBridge Design System - Modern platform for student-startup connections */
+/* TalentBridge Design System - Futuristic platform with neon themes */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 9 9% 11%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 20 14% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 20 14% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Modern tech purple-blue gradient theme */
-    --primary: 258 89% 66%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 270 100% 80%;
+    /* Cyberpunk neon theme */
+    --primary: 177 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 177 100% 70%;
 
-    --secondary: 249 100% 97%;
-    --secondary-foreground: 258 89% 66%;
+    --secondary: 285 100% 70%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 249 100% 97%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 20 14% 15%;
+    --muted-foreground: 215.4 16.3% 65%;
 
-    --accent: 258 89% 66%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 258 89% 66%;
+    --border: 177 100% 50% / 0.2;
+    --input: 20 14% 15%;
+    --ring: 177 100% 50%;
 
-    /* Platform-specific design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(258 89% 66%), hsl(224 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(224 100% 70%), hsl(185 100% 75%));
-    --gradient-hero: linear-gradient(135deg, hsl(258 89% 66%) 0%, hsl(224 100% 70%) 50%, hsl(185 100% 75%) 100%);
+    /* Futuristic design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(177 100% 50%), hsl(285 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(285 100% 70%), hsl(60 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(177 100% 50%) 0%, hsl(285 100% 70%) 50%, hsl(60 100% 50%) 100%);
+    --gradient-neon: linear-gradient(45deg, hsl(177 100% 50%), hsl(285 100% 70%), hsl(60 100% 50%), hsl(320 100% 60%));
+    --gradient-cyber: linear-gradient(90deg, hsl(177 100% 50% / 0.1), hsl(285 100% 70% / 0.1));
     
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(258 89% 66% / 0.3);
-    --shadow-card: 0 4px 20px hsl(258 89% 66% / 0.1);
-    --shadow-elevated: 0 8px 30px hsl(258 89% 66% / 0.15);
+    /* Neon shadows and glows */
+    --shadow-glow: 0 0 50px hsl(177 100% 50% / 0.7);
+    --shadow-card: 0 4px 30px hsl(177 100% 50% / 0.3);
+    --shadow-elevated: 0 10px 60px hsl(177 100% 50% / 0.4);
+    --shadow-neon-pink: 0 0 30px hsl(285 100% 70% / 0.6);
+    --shadow-neon-yellow: 0 0 30px hsl(60 100% 50% / 0.6);
+    --shadow-multi: 0 0 20px hsl(177 100% 50% / 0.5), 0 0 40px hsl(285 100% 70% / 0.3), 0 0 60px hsl(60 100% 50% / 0.2);
 
-    /* Transitions */
+    /* Transitions and animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-neon: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --radius: 0.5rem;
 
@@ -70,33 +77,33 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 9 9% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 9 9% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 177 100% 60%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 285 100% 80%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 20 14% 12%;
+    --muted-foreground: 215 20.2% 75%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 60 100% 60%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 177 100% 50% / 0.3;
+    --input: 20 14% 12%;
+    --ring: 177 100% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -119,28 +126,125 @@
 }
 
 @layer components {
-  /* Custom component variants */
+  /* Futuristic component variants */
   .btn-gradient {
     @apply bg-gradient-to-r from-primary to-accent text-primary-foreground;
     @apply hover:shadow-glow transition-all duration-300;
   }
   
   .btn-hero {
-    @apply bg-gradient-to-r from-primary via-blue-500 to-cyan-400 text-white;
-    @apply hover:scale-105 hover:shadow-elevated transition-all duration-300;
-    @apply border-0 shadow-card;
+    background: var(--gradient-primary);
+    @apply text-black font-bold border-2 border-primary/50;
+    @apply hover:scale-105 hover:border-primary;
+    transition: var(--transition-neon);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .btn-hero:hover {
+    box-shadow: var(--shadow-multi);
+    transform: scale(1.05) translateY(-2px);
+  }
+  
+  .btn-neon {
+    @apply bg-transparent border-2 border-primary text-primary font-bold;
+    @apply hover:bg-primary hover:text-primary-foreground hover:shadow-glow;
+    transition: var(--transition-glow);
+  }
+  
+  .btn-cyber {
+    background: var(--gradient-neon);
+    @apply text-black font-bold border border-accent/30;
+    @apply hover:border-accent hover:shadow-neon-yellow;
+    transition: var(--transition-neon);
   }
   
   .card-elevated {
-    @apply bg-card border border-border rounded-lg shadow-card;
-    @apply hover:shadow-elevated transition-all duration-300;
+    @apply bg-card/80 backdrop-blur-sm border border-primary/20 rounded-lg;
+    box-shadow: var(--shadow-card);
+    @apply hover:border-primary/40 transition-all duration-300;
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+  }
+  
+  .card-neon {
+    @apply bg-card/60 backdrop-blur-md border border-accent/30 rounded-lg;
+    box-shadow: var(--shadow-neon-pink);
+    @apply hover:border-accent hover:shadow-neon-yellow;
+    transition: var(--transition-glow);
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-blue-500 to-cyan-400 bg-clip-text text-transparent;
+    background: var(--gradient-primary);
+    @apply bg-clip-text text-transparent font-bold;
+  }
+  
+  .text-neon {
+    background: var(--gradient-neon);
+    @apply bg-clip-text text-transparent font-bold;
+    text-shadow: 0 0 30px hsl(177 100% 50% / 0.5);
   }
   
   .bg-hero {
     background: var(--gradient-hero);
+    position: relative;
+  }
+  
+  .bg-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-cyber);
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+  }
+  
+  .glow-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, hsl(177 100% 50% / 0.3), transparent, hsl(285 100% 70% / 0.3), transparent);
+    animation: rotate-glow 4s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes pulse-glow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+  }
+  
+  @keyframes rotate-glow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes neon-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  
+  .animate-neon-flicker {
+    animation: neon-flicker 2s ease-in-out infinite;
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 }
