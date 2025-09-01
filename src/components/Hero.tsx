@@ -1,9 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { LoginModal } from "@/components/LoginModal";
+import { useState } from "react";
 import heroImage from "@/assets/hero-image.jpg";
 
 export const Hero = () => {
+  const [loginModal, setLoginModal] = useState<{ isOpen: boolean; userType: "student" | "organizer" | null }>({
+    isOpen: false,
+    userType: null,
+  });
+
+  const openLoginModal = (userType: "student" | "organizer") => {
+    setLoginModal({ isOpen: true, userType });
+  };
+
+  const closeLoginModal = () => {
+    setLoginModal({ isOpen: false, userType: null });
+  };
   return (
     <section className="pt-20 pb-16 lg:pt-32 lg:pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,19 +32,23 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Link to="/student-portal">
-                <Button size="lg" className="btn-hero text-lg px-8 py-4 glow-effect">
-                  <Users className="w-5 h-5 mr-2" />
-                  Join as Student
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-              <Link to="/organizer-portal">
-                <Button size="lg" className="btn-neon text-lg px-8 py-4">
-                  <Briefcase className="w-5 h-5 mr-2" />
-                  Post Opportunities
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="btn-hero text-lg px-8 py-4 glow-effect"
+                onClick={() => openLoginModal("student")}
+              >
+                <Users className="w-5 h-5 mr-2" />
+                Join as Student
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button 
+                size="lg" 
+                className="btn-neon text-lg px-8 py-4"
+                onClick={() => openLoginModal("organizer")}
+              >
+                <Briefcase className="w-5 h-5 mr-2" />
+                Post Opportunities
+              </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">
@@ -60,6 +77,15 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-gradient-cyber rounded-2xl opacity-20"></div>
           </div>
         </div>
+
+        {/* Login Modal */}
+        {loginModal.userType && (
+          <LoginModal
+            isOpen={loginModal.isOpen}
+            onClose={closeLoginModal}
+            userType={loginModal.userType}
+          />
+        )}
       </div>
     </section>
   );

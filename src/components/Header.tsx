@@ -2,9 +2,22 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Menu, X } from "lucide-react";
+import { LoginModal } from "@/components/LoginModal";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loginModal, setLoginModal] = useState<{ isOpen: boolean; userType: "student" | "organizer" | null }>({
+    isOpen: false,
+    userType: null,
+  });
+
+  const openLoginModal = (userType: "student" | "organizer") => {
+    setLoginModal({ isOpen: true, userType });
+  };
+
+  const closeLoginModal = () => {
+    setLoginModal({ isOpen: false, userType: null });
+  };
 
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
@@ -31,18 +44,21 @@ export const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/student-portal">
-              <Button variant="outline" className="flex items-center space-x-2">
-                <Users className="w-4 h-4" />
-                <span>Student Login</span>
-              </Button>
-            </Link>
-            <Link to="/organizer-portal">
-              <Button className="btn-hero flex items-center space-x-2">
-                <Briefcase className="w-4 h-4" />
-                <span>Organizer Login</span>
-              </Button>
-            </Link>
+            <Button 
+              variant="outline" 
+              className="flex items-center space-x-2 btn-neon"
+              onClick={() => openLoginModal("student")}
+            >
+              <Users className="w-4 h-4" />
+              <span>Student Login</span>
+            </Button>
+            <Button 
+              className="btn-hero flex items-center space-x-2"
+              onClick={() => openLoginModal("organizer")}
+            >
+              <Briefcase className="w-4 h-4" />
+              <span>Organizer Login</span>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -68,21 +84,33 @@ export const Header = () => {
                 About
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Link to="/student-portal">
-                  <Button variant="outline" className="flex items-center justify-center space-x-2 w-full">
-                    <Users className="w-4 h-4" />
-                    <span>Student Login</span>
-                  </Button>
-                </Link>
-                <Link to="/organizer-portal">
-                  <Button className="btn-hero flex items-center justify-center space-x-2">
-                    <Briefcase className="w-4 h-4" />
-                    <span>Organizer Login</span>
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="flex items-center justify-center space-x-2 w-full btn-neon"
+                  onClick={() => openLoginModal("student")}
+                >
+                  <Users className="w-4 h-4" />
+                  <span>Student Login</span>
+                </Button>
+                <Button 
+                  className="btn-hero flex items-center justify-center space-x-2"
+                  onClick={() => openLoginModal("organizer")}
+                >
+                  <Briefcase className="w-4 h-4" />
+                  <span>Organizer Login</span>
+                </Button>
               </div>
             </nav>
           </div>
+        )}
+
+        {/* Login Modal */}
+        {loginModal.userType && (
+          <LoginModal
+            isOpen={loginModal.isOpen}
+            onClose={closeLoginModal}
+            userType={loginModal.userType}
+          />
         )}
       </div>
     </header>

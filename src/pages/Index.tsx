@@ -5,6 +5,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Footer } from "@/components/Footer";
 import { AIChatBox } from "@/components/AIChatBox";
 import { InteractiveButtons } from "@/components/InteractiveButtons";
+import { ReferFriend } from "@/components/ReferFriend";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <Hero />
       <InteractiveButtons />
       <Features />
+      <ReferFriend />
       <HowItWorks />
       <Footer />
       <AIChatBox />
