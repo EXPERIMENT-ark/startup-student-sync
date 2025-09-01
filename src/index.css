@@ -172,8 +172,12 @@
   .card-neon {
     @apply bg-card/60 backdrop-blur-md border border-accent/30 rounded-lg;
     box-shadow: var(--shadow-neon-pink);
-    @apply hover:border-accent hover:shadow-neon-yellow;
     transition: var(--transition-glow);
+  }
+  
+  .card-neon:hover {
+    @apply border-accent;
+    box-shadow: var(--shadow-neon-yellow);
   }
   
   .text-gradient {

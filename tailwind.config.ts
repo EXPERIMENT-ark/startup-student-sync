@@ -67,7 +67,10 @@ export default {
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)',
-				'elevated': 'var(--shadow-elevated)'
+				'elevated': 'var(--shadow-elevated)',
+				'neon-pink': 'var(--shadow-neon-pink)',
+				'neon-yellow': 'var(--shadow-neon-yellow)',
+				'multi': 'var(--shadow-multi)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
